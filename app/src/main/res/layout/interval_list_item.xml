@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/intervalListItemLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textField"
-        android:layout_width="match_parent"
+        android:id="@+id/intervalNameTitle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
         android:hint="@string/label"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/dragItemButton"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -21,13 +28,107 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/dragItemButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
+        android:layout_marginEnd="4dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/intervalNameTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/intervalNameTitle"
+        app:layout_constraintTop_toTopOf="@+id/intervalNameTitle"
+        app:srcCompat="@drawable/ic_drag_handle_24" />
+
+    <ImageButton
+        android:id="@+id/plusDistanceButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
         android:background="#000000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textField"
+        app:layout_constraintBottom_toBottomOf="@+id/kmInput"
+        app:layout_constraintEnd_toStartOf="@+id/kmInput"
+        app:layout_constraintTop_toTopOf="@+id/kmInput"
         app:srcCompat="@drawable/ic_round_add_12" />
+
+    <ImageButton
+        android:id="@+id/minusDistanceButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:background="#000000"
+        app:layout_constraintBottom_toBottomOf="@+id/kmInput"
+        app:layout_constraintStart_toEndOf="@+id/kminnerInput"
+        app:layout_constraintTop_toTopOf="@+id/kmInput"
+        app:srcCompat="@drawable/ic_round_remove_12" />
+
+    <EditText
+        android:id="@+id/kmInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="2"
+        android:inputType="numberSigned"
+        android:textSize="@dimen/InputTextSize"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/intervalNameTitle" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="."
+        android:textSize="@dimen/InputTextSize"
+        app:layout_constraintBottom_toBottomOf="@+id/kminnerInput"
+        app:layout_constraintEnd_toStartOf="@+id/kminnerInput"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/kmInput"
+        app:layout_constraintTop_toTopOf="@+id/kminnerInput"
+        app:layout_constraintVertical_bias="0.76" />
+
+    <EditText
+        android:id="@+id/kminnerInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="2"
+        android:inputType="numberSigned"
+        android:textSize="@dimen/InputTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/kmInput" />
+
+    <ImageButton
+        android:id="@+id/deleteIntervalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="12dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/IntervalColorPickerButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kmInput"
+        app:srcCompat="@drawable/ic_delete_24" />
+
+    <ImageButton
+        android:id="@+id/IntervalColorPickerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="12dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/deleteIntervalButton"
+        app:layout_constraintTop_toBottomOf="@+id/kminnerInput"
+        app:srcCompat="@drawable/ic_baseline_color_lens_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
