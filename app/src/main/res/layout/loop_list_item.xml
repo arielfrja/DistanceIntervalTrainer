@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="4dp"
     android:background="@drawable/loop_background"
     tools:layout_height="wrap_content">
 
@@ -12,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00FFFFFF"
-        android:tint="#D3D3D3"
+        android:tint="#99000000"
         app:layout_constraintBottom_toTopOf="@+id/intervalsList"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.047"
@@ -28,6 +29,7 @@
         android:layout_marginTop="12dp"
         android:layout_marginBottom="4dp"
         android:text="sets"
+        android:textAlignment="center"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@id/intervalsList"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,7 +70,8 @@
         android:layout_height="wrap_content"
         android:ems="2"
         android:inputType="number|textPersonName"
-        android:text="Name"
+        android:textAlignment="center"
+        android:textColor="#E4E4E4"
         app:layout_constraintBottom_toTopOf="@+id/intervalsList"
         app:layout_constraintEnd_toStartOf="@+id/minusLoopButton"
         app:layout_constraintHorizontal_bias="0.5"
@@ -80,15 +83,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton3"
+        app:layout_constraintBottom_toTopOf="@+id/addIntervalButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton3"
+        app:layout_constraintEnd_toStartOf="@+id/addIntervalButton"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/setLoopInput" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/addIntervalButton"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginTop="4dp"

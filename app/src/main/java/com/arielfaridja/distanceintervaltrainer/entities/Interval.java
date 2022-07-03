@@ -3,22 +3,31 @@ package com.arielfaridja.distanceintervaltrainer.entities;
 import java.io.Serializable;
 
 public class Interval implements Serializable {
-    float distnace;
+    float distance;
     int color;
-    String name;
 
-    public Interval(float distnace, int color, String name) {
-        this.distnace = distnace;
+    public Interval(float distance, int color, String name) {
+        this.distance = distance;
         this.color = color;
         this.name = name;
     }
 
-    public float getDistnace() {
-        return distnace;
+    public String getName() {
+        return name;
     }
 
-    public void setDistnace(float distnace) {
-        this.distnace = distnace;
+    String name;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public float getDistance() {
+        return distance;
+    }
+
+    public void setDistance(float distance) {
+        this.distance = distance;
     }
 
     public int getColor() {

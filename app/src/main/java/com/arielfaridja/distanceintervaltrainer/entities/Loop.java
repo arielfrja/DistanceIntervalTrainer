@@ -18,7 +18,7 @@ public class Loop implements Serializable {
         totalDistance = 0;
         for (Interval interval :
                 getIntervals()) {
-            totalDistance += interval.distnace;
+            totalDistance += interval.distance;
         }
         return totalDistance;
     }
